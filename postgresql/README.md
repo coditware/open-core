@@ -16,3 +16,10 @@
 
     NETWORK_NAME="network name to connect to postgres"
 ```
+
+## Docker secrets that need to be defined
+```
+    mkdir .secrets
+    echo db_user > .secrets/db.user
+    echo db_password > .secrets/db.password
+```

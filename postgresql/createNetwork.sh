@@ -7,6 +7,8 @@ if [ ! -f ${VARIABLES_FILE} ]; then
     exit 1
 fi
 
+source ${VARIABLES_FILE}
+
 docker network create \
     --opt encrypted \
     --driver overlay \
