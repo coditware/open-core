@@ -8,10 +8,11 @@ services:
     secrets:
       - db_user
       - db_password
+      - db_name
     environment:
       - POSTGRES_USER_FILE=/run/secrets/db_user
       - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
-      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_DB_FILE=/run/secrets/db_name
     networks:
       - database
 
@@ -25,6 +26,8 @@ secrets:
     file: ./.secrets/db.user
   db_password:
     file: ./.secrets/db.password
+  db_name:
+    file: ./.secrets/db.db_name
 
 networks:
   database:

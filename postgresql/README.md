@@ -22,4 +22,5 @@
     mkdir .secrets
     echo db_user > .secrets/db.user
     echo db_password > .secrets/db.password
+    echo db_name > .secrets/db.db_name
 ```
