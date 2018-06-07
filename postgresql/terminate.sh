@@ -5,7 +5,4 @@ VARIABLES_FILE=${DIR}/.variables
 
 source ${VARIABLES_FILE}
 
-docker network create \
-    --opt encrypted \
-    --driver overlay \
-    --attachable ${NETWORK_NAME}
+docker stack rm ${SERVICE_NAME}
