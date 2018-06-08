@@ -1,0 +1,29 @@
+version: '3.5'
+services:
+  nginx:
+    image: nginx:alpine    
+    volumes:
+      - "nginx-data:/etc/nginx"    
+    ports:
+      - mode: host
+        protocol: tcp
+        published: 80
+        target: 80
+      
+      - mode: host
+        protocol: tcp
+        published: 443
+        target: 443
+    networks:
+      - proxy
+
+volumes:
+  nginx-data:
+    external: true
+    name: nginx-data
+
+networks:
+  proxy:
+    external: true
+    name: nginx-proxy
+

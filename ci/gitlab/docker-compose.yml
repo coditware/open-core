@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+  git:
+    image: gitlab/gitlab-ce:latest
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '1024M'
+    volumes:
+      - var-opt:/var/opt/gitlab
+      - etc:/etc/gitlab
+      - var-log:/var/log/gitlab
+
+volumes:
+  var-opt:
+  var-log:
+  etc:

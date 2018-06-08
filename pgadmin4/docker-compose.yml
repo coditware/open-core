@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+  pgadmin:
+    image: 'dpage/pgadmin4:3'
+
+    networks:
+      database:
+      proxy:
+    
+    env_file:
+      - secrets.env
+
+    restart: always
+
+networks:
+  database:
+    external: true
+    name: database
+  proxy:
+    external: true
+    name: nginx-proxy
+

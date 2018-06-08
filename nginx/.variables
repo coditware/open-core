@@ -1,0 +1,3 @@
+SERVICE_NAME=nginx-proxy
+VOLUME_NAME=nginx-date
+NETWORK_NAME=nginx-proxy

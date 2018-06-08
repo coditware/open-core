@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  auth:
+    image: 'jboss/keycloak:4.0.0.Beta2'
+    env_file:
+      - ./secrets.env
+    depends_on:
+      - db
+    networks:
+      database:
+      proxy:
+
+networks:
+  database:
+    external: true
+    name: database
+  proxy:
+    external: true
+    name: nginx-proxy
