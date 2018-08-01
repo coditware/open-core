@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  proxy:
+    image: 'traefik:1.6-alpine'
+
+    command: --api --docker
+
+    ports:
+      - 8080:80
+      - 8443:443
+      - 8081:8080
+    
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    networks:
+      proxy:
+      nginx-proxy:
+
+networks:
+  proxy:
+    external: true
+    name: coditware_proxy
+  nginx-proxy:
+    external: true
+    name: nginx-proxy
