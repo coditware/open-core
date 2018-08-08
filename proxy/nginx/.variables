@@ -1,3 +1,4 @@
 SERVICE_NAME=nginx-proxy
 VOLUME_NAME=nginx-data
 NETWORK_NAME=nginx-proxy
+IMAGE_NAME=coditware:nginx-alpine

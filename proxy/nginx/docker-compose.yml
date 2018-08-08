@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   nginx:
-    image: nginx:alpine    
+    image: coditware:nginx-alpine
     volumes:
       - "nginx-data:/etc/nginx"    
     ports:
