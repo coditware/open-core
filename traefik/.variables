@@ -1,3 +1,0 @@
-NETWORK_NAME=${NETWORK_NAME:-coditware_proxy}
-VOLUME_NAME=traefik-data
-SERVICE_NAME=traefik-proxy
