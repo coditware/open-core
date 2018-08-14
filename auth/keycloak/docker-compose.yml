@@ -1,11 +1,11 @@
 version: '3.5'
 services:
   auth:
-    image: 'jboss/keycloak:4.0.0.Beta2'
+    image: 'jboss/keycloak:4.2.1.Final'
     env_file:
       - ./secrets.env
     depends_on:
-      - db
+      - postgres
     networks:
       database:
       proxy:
