@@ -1,0 +1,25 @@
+version: '3.5'
+
+services: 
+  git:
+    image: 'gogs/gogs:0.11.53'
+    volumes:
+      - gogs-data:/data
+    networks:
+      - nginx-proxy
+      - database
+    depends_on:
+      - postgres
+
+volumes:
+  gogs-data:
+    external: true
+    name: gogs-data
+
+networks:
+  nginx-proxy:
+    external: true
+    name: nginx-proxy
+  database:
+    external: true
+    name: database

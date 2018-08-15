@@ -12,7 +12,7 @@ docker build -t ${IMAGE_NAME} ./
 
 docker stack rm ${SERVICE_NAME}
 
-docker volume rm ${VOLUME_NAME}
-docker volume create ${VOLUME_NAME}
+# docker volume rm ${VOLUME_NAME}
+# docker volume create ${VOLUME_NAME}
 
 docker stack deploy --compose-file ${DIR}/docker-compose.yml ${SERVICE_NAME}
