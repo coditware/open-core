@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  ssh-server:
+    image: ssh-server:latest
+    build:
+      context: .
+      dockerfile: ${PWD}/Dockerfile
+      
+    ports:
+      - "22:22"
+    
+    volumes:
+      - ssh-volume:/home/sshuser/shared
+
+    command: ["/usr/sbin/sshd", "-D" ]
+
+volumes:
+  ssh-volume:
+    external: true
