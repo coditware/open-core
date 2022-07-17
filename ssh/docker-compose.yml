@@ -12,9 +12,17 @@ services:
     
     volumes:
       - ssh-volume:/home/sshuser/shared
+      - v1:/home/sshuser/Videos
+      - ${PWD}/authorized_keys:/home/sshuser/.ssh/authorized_keys
 
-    command: ["/usr/sbin/sshd", "-D" ]
+    command: [ "/usr/sbin/sshd", "-D" ]
 
 volumes:
   ssh-volume:
+    external: true
+
+  v1:
+    external: true
+
+  v2:
     external: true
